@@ -131,10 +131,10 @@ By default, all 16 released models are evaluated on the four datasets. On Fundus
 validation images of its fold. Metrics are averaged over the fold models of each seed and reported as mean ± standard
 deviation over seeds (`classification.csv`). Further options:
 
-- `--rrwnet` also evaluates the official RRWNet weights, which gives the Dice of RRWNet reported in Table 1;
+- `--rrwnet` also evaluates the official RRWNet weights, which gives the Dice of RRWNet reported in Table 1.
 - `--n-paths 100` computes the connectivity metrics Inf and Corr of Table 2 (`connectivity.csv`), which takes several hours
-  on HRF at native resolution;
-- `--tffm` evaluates Fundus-AVSeg in the protocol of TFFM (`tffm_protocol.csv`);
+  on HRF at native resolution.
+- `--tffm` evaluates Fundus-AVSeg in the protocol of TFFM (`tffm_protocol.csv`).
 - `--models` and `--datasets` restrict the evaluation, for example `--models fundus-avseg-rav --datasets rite lesav`.
 
 Predictions are cached in `results/predictions`, so an interrupted evaluation resumes where it stopped.
