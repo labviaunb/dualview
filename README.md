@@ -111,8 +111,33 @@ each fold took about 2 to 4 hours on a single NVIDIA RTX PRO 6000 Blackwell GPU 
 
 ## Evaluation
 
-The evaluation protocol of the paper (official RRWNet metrics, Dice, connectivity and the comparison tables) will be added
-to this repository.
+The evaluation reproduces Tables 1 and 2 of the paper with the official evaluation code of RRWNet (commit `03069bb`), which
+is downloaded automatically together with the official references and field-of-view masks of RITE, HRF and LES-AV. The test
+images must be placed in a data folder with the following layout, as distributed by the authors of each dataset:
+
+```
+DATA/RITE/test/images/01_test.tif ... 20_test.tif
+DATA/HRF/images/01_dr.JPG ... 05_h.jpg
+DATA/LES-AV/images/12.png ... 586.png
+DATA/Fundus-AVSeg/images/*.png
+DATA/Fundus-AVSeg/annotations/*.png
+```
+
+```bash
+python -m dualview.evaluation.evaluate --data-root DATA --assets ASSETS --out results/
+```
+
+By default, all 16 released models are evaluated on the four datasets. On Fundus-AVSeg, each fold model predicts only the
+validation images of its fold. Metrics are averaged over the fold models of each seed and reported as mean ± standard
+deviation over seeds (`classification.csv`). Further options:
+
+- `--rrwnet` also evaluates the official RRWNet weights, which gives the Dice of RRWNet reported in Table 1;
+- `--n-paths 100` computes the connectivity metrics Inf and Corr of Table 2 (`connectivity.csv`), which takes several hours
+  on HRF at native resolution;
+- `--tffm` evaluates Fundus-AVSeg in the protocol of TFFM (`tffm_protocol.csv`);
+- `--models` and `--datasets` restrict the evaluation, for example `--models fundus-avseg-rav --datasets rite lesav`.
+
+Predictions are cached in `results/predictions`, so an interrupted evaluation resumes where it stopped.
 
 ## Citation
 

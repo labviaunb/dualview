@@ -18,10 +18,12 @@ dependencies = [
     "scikit-image",
     "opencv-python-headless",
     "pillow",
+    "pandas",
+    "scikit-learn",
 ]
 
 [project.urls]
 Repository = "https://github.com/labviaunb/dualview"
 
 [tool.setuptools]
-packages = ["dualview"]
+packages = ["dualview", "dualview.evaluation"]
