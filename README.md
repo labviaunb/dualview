@@ -31,6 +31,11 @@ training. RRWNet and RRWNet + C³ are the published results of models trained on
 On Fundus-AVSeg, DualView reaches artery and vein Dice of 90.3% and 91.7%, which is 4.6 and 4.4 percentage points higher
 than RRWNet retrained on the same folds. The paper also reports vessel segmentation, Dice and connectivity on all datasets.
 
+The example below is the LES-AV image whose difference in A/V accuracy between DualView and RRWNet is the median of the
+dataset. None of the three models saw LES-AV during training. The bottom row shows the error map of each prediction.
+
+![Predictions on LES-AV](docs/example_lesav.png)
+
 ## Installation
 
 ```bash
