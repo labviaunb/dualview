@@ -74,7 +74,6 @@ prob, aperture = predictor(load_image('photo.png'))   # prob: (H, W, 3) = [arter
 
 The photograph must have a dark surround, as usual in fundus cameras. The input field of view is estimated from the camera
 aperture, and the square around it is resized to 1280 × 1280 pixels. The predictions are returned at the native resolution.
-Inference takes about 1.2 s per image on a laptop with an Apple M3 Max processor.
 
 ## Released models
 
