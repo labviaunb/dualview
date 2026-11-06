@@ -2,8 +2,14 @@
 
 **Combining a convolutional network and a vision transformer for artery–vein segmentation that generalizes across fundus datasets**
 
-Vinicius de Carvalho Rispoli, Alan Müller, Thiago Alves Martins, Ronni Geraldo Gomes de Amorim, Marília Miranda Forte Gomes and
-Rodolfo Deusdará Rodrigues - University of Brasília, Brazil
+Vinicius de Carvalho Rispoli<sup>1,2</sup>, Alan Müller<sup>1</sup>, Thiago Alves Martins<sup>2</sup>, Ronni Geraldo Gomes de
+Amorim<sup>1</sup>, Marília Miranda Forte Gomes<sup>1</sup> and Rodolfo Deusdará Rodrigues<sup>2,3</sup>
+
+<sup>1</sup> Graduate Program in Biomedical Engineering, Faculty of Sciences and Technologies in Engineering, University of Brasília,
+Brasília, DF, Brazil<br>
+<sup>2</sup> Graduate Program in Medical Sciences, Faculty of Medicine, University of Brasília, Brasília, DF, Brazil<br>
+<sup>3</sup> Institute for Health Assessment and Translation for Chronic and Neglected Diseases of High Relevance (IATS-CARE),
+Belo Horizonte, MG, Brazil
 
 DualView is a U-shaped network for the segmentation and artery/vein (A/V) classification of retinal vessels in color fundus
 photographs. A convolutional encoder processes a contrast-enhanced view of the photograph at full resolution, while a DINOv3
